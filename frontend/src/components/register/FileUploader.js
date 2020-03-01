@@ -54,6 +54,8 @@ export default function FileUploader(props) {
           } else if (geojson.type == 'Polygon') {
             turfPoly = turfHelpers.polygon(geojson.geometry.coordinates);
           }
+          
+          geojson.properties.parent = null;
 
           props.registeredZones.forEach(function (registeredZone) {
 
@@ -70,13 +72,11 @@ export default function FileUploader(props) {
                 address: registeredZone.properties.address,
                 iso3:  registeredZone.properties.ISO3
               }
-              props.setZoneToRegister(geojson);
             }
           });
 
 
             geojson.properties.tested = true;
-            geojson.properties.parent = null;
 
             props.setZoneToRegister(geojson);
 
@@ -122,11 +122,11 @@ export default function FileUploader(props) {
         <section className="container">
         <div {...getRootProps({style})}>
             <input {...getInputProps()} />
-            <p>Drag 'n' drop some files here, or click to select files</p>
+            <p>Drag and drop a Geojson file here, or click to select.</p>
             <em>(Only *.json files will be accepted)</em>
         </div>
         <aside>
-            <h6 className = "text-primary">Accepted GeoJSON:</h6>
+            <p>Accepted GeoJSON:</p>
             <ul>
             {acceptedFilesItems}
             </ul>

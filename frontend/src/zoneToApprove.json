@@ -1,3 +1,4 @@
+
 {
   "type": "Feature",
   "properties": {
@@ -5,8 +6,7 @@
     "stroke-width": 2,
     "stroke-opacity": 1,
     "fill": "#555555",
-    "fill-opacity": 0.5,
-    "address": "0x77DB10B97bbcE20656d386624ACb5469E57Dd21b"
+    "fill-opacity": 0.5
   },
   "geometry": {
     "type": "Polygon",
